@@ -1,0 +1,74 @@
+@import './../../style/default.less';
+.header{
+    background-color:@colorM;
+    .header-top{
+        padding:0 20px;
+        text-align: right;
+        height: 60px;
+        line-height: 60px;
+    }
+    a{
+        margin-left:40px;
+    }
+}
+.breadcrumb{
+    height: 40px;
+    line-height: 40px;
+    padding:0 20px;
+    border-top:1px solid#f9c700;
+    .breadcrumb-title{
+        text-align:center;
+        font-weight: bold;
+        font-size: @fontC;
+        &:after{
+            position: absolute;
+            content:"";
+           border-top:10px solid @colorM;
+           border-left:12px solid transparent;
+           border-right:12px solid transparent;
+           top:39px;
+           left:72px;
+        }   
+    }
+    .weather{
+        font-size: 14px;
+        .data{
+            margin-right:10px;
+            vertical-align:middle;
+        }
+        text-align: right;
+        .weather-img{
+            img{
+                width: 20px;
+                
+            }
+        }
+        .weather-detail{
+            margin-left:10px;
+            vertical-align:middle;
+        }
+     }
+}
+.simple-page{
+    .header-top{
+        background: #1890ff;
+        color:@colorM;
+        .logo{
+            line-height: 60px;
+            text-align: left;
+            font-size:18px;
+            img{
+                height: 40px;
+                vertical-align:middle;
+            }
+            span{
+                margin-left:10px;
+            }
+        }
+    }
+    .ant-fom,
+    .ant-col-12,
+    .weather{
+        display: none;
+    }
+}
