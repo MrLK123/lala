@@ -1,15 +1,12 @@
-/*
- * action 类型
- */
 
-export const type = {
-    SWITCH_MENU : 'SWITCH_MENU'
+
+// action类型
+export const type={
+    SWICH_MENU:"SWICH_MENU"
 }
 
-// 菜单点击切换，修改面包屑名称
-export function switchMenu(menuName) {
-    return {
-        type:type.SWITCH_MENU,
-        menuName
-    }
-}
+
+export const switchMenu=(menuName)=>({
+    type:type.SWICH_MENU,
+    menuName
+})

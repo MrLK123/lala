@@ -24,14 +24,16 @@ class FilterForm extends React.Component{
         if(formList && formList.length > 0){
             list=formList.map((item,index)=>{
                 let {type,label,field,placeholder,width,list,initialValue}=item;
+                
                 switch(type){
                     case "INPUT":
+                 
                     return <FormItem label={label} key={field}>
                        {
                            getFieldDecorator(field,{
                                initialValue
                            })(
-                               <Input type="text" placeholder={placeholder} />
+                               <Input type="text"  style={{width}} placeholder={placeholder} />
                            )
                        }
                        </FormItem>
@@ -73,6 +75,16 @@ class FilterForm extends React.Component{
                       }
                         </FormItem>
                     </Fragment>);
+                    case "DATE":
+                    return (
+                        <FormItem key={field} label={label} >
+                            {
+                                getFieldDecorator(field)(
+                                    <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss" />
+                                )
+                            }
+                      </FormItem>
+                    )
                 }
             })
         }

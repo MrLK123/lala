@@ -8,10 +8,12 @@ export default class Axios {
         this.ajax({url,data}).then(data=>{
             if(data.status=="10001"){
                 _this.setState({
+            //    加key值
                     dataSource:data.result.item_list.map((item,index)=>{
                         item.key=index;
                         return item;   
                 }),
+                // 设置分页
                 pagination:Utils.pagination(data,(current)=>{
                     _this.param.page=current;
                    
@@ -48,12 +50,13 @@ export default class Axios {
                 baseURL:"https://easy-mock.com/mock/5cd4d66e4993c3317af3928e/mockapi",
                 timeout:3000,
                 params:(options.data && options.data.params) || ""
-            }).then(response=>{
+            }).then(response=>{ 
                 if(options.data && options.data.isloading!==false){
                     // loading=document.getElementById("ajaxLoading");
                     loading.style.display="none";
                 }
                 if(response.status==200){
+                   
                     let res=response.data;
                     if(res.status=='10001'){
                         resolve(res)

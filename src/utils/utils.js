@@ -2,6 +2,22 @@ import { Select } from 'antd';
 import React from 'react';
 const Option= Select.Option;
 export default {
+
+    // 表单
+    updateSelectedItem(selectedRowKeys, selectedRows, selectedIds) {
+        if (selectedIds) {
+            this.setState({
+                selectedRowKeys,
+                selectedIds: selectedIds,
+                selectedItem: selectedRows
+            })
+        } else {
+            this.setState({
+                selectedRowKeys,
+                selectedItem: selectedRows
+            })
+        }
+    },
     formateDate(time){
         if(!time)return "";
     time=new Date(time);

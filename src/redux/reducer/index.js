@@ -1,19 +1,14 @@
-/**
- * reducer
- */
-
-import { combineReducers } from 'redux'
-import { type } from '../action';
-const ebikeData = (state, action) => {
-    switch (action.type) {
-        case type.SWITCH_MENU:
-            return {
-                ...state,
-                menuName:action.menuName
-            };
-        default:
-            return {...state};
+// 数据处理
+import {type} from './../action'
+const initialState={
+    menuName:"首页"
+}
+export default (state=initialState,action)=>{
+    switch(action.type){
+        case type.SWICH_MENU:return {
+            ...state,
+            menuName:action.menuName
+        }
+        default:return state;
     }
-};
-
-export default ebikeData;
+}
